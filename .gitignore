@@ -1,0 +1,24 @@
+# .NET build artifacts
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.sln
+*.csproj.user
+*.userprefs
+*.vscode
+
+# NuGet packages
+*.nuget.props
+*.nuget.targets
+packages/
+
+# Build output
+*_ReSharper.*
+*.resharper.user
+_ReSharper.*/
+
+# Rider
+.idea/
+
