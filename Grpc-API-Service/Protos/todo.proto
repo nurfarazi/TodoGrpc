@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc_API_Service";
+
+package todoIt;
+
+// Create
+service TodoItService
+{
+    rpc Create(CreateRequest) returns (CreateResponse);
+    rpc Read(ReadRequest) returns (ReadResponse);
+    rpc Update(UpdateRequest) returns (UpdateResponse);
+    rpc Delete(DeleteRequest) returns (DeleteResponse);
+    rpc ReadAll(ReadAllRequest) returns (ReadAllResponse);
+}
+
+message CreateRequest
+{
+  string title = 1;
+}
+
+message CreateResponse
+{
+  string id = 1;
+}
+message ReadAllRequest
+{
+}
+message ReadAllResponse
+{
+    repeated Todo todos = 1;
+}
+
