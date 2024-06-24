@@ -14,6 +14,6 @@ namespace TodoGrpc.Data
         {
         }
 
-        public DbSet<ToDoItem> ToDoItems => Set<ToDoItem>();
+        // public DbSet<ToDoItem> ToDoItems => Set<ToDoItem>();
     }
 }
