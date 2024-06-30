@@ -42,6 +42,7 @@ message UpdateRequest
 message UpdateResponse
 {
   string id = 1;
+  string title = 2;
 }
 
 message DeleteRequest
