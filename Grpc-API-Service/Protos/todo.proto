@@ -4,14 +4,13 @@ option csharp_namespace = "Grpc_API_Service";
 
 package todoIt;
 
-// Create
-service TodoItService
+service TodoIt
 {
-    rpc Create(CreateRequest) returns (CreateResponse);
-    rpc Read(ReadRequest) returns (ReadResponse);
-    rpc Update(UpdateRequest) returns (UpdateResponse);
-    rpc Delete(DeleteRequest) returns (DeleteResponse);
-    rpc ReadAll(ReadAllRequest) returns (ReadAllResponse);
+  rpc Create(CreateRequest) returns (CreateResponse);
+  rpc Read(ReadRequest) returns (ReadResponse);
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
+  rpc ReadAll(ReadAllRequest) returns (ReadAllResponse);
 }
 
 message CreateRequest
@@ -23,11 +22,44 @@ message CreateResponse
 {
   string id = 1;
 }
+
+message ReadRequest
+{
+  string id = 1;
+}
+
+message ReadResponse
+{
+  string title = 1;
+}
+
+message UpdateRequest
+{
+  string id = 1;
+  string title = 2;
+}
+
+message UpdateResponse
+{
+  string id = 1;
+}
+
+message DeleteRequest
+{
+  string id = 1;
+}
+
+message DeleteResponse
+{
+  string id = 1;
+}
+
 message ReadAllRequest
 {
 }
+
 message ReadAllResponse
 {
-    repeated Todo todos = 1;
+  repeated string id = 1;
+  repeated string title = 2;
 }
-
