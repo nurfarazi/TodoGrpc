@@ -61,7 +61,10 @@ public class TodoService : TodoIt.TodoItBase
         if (request.Id == string.Empty)
             throw new RpcException(new Status(StatusCode.InvalidArgument, "Id cannot be empty"));
 
-        var todo = await _dbContext.ToDoItems.FindAsync(request.Id);
+        if (!Guid.TryParse(request.Id, out Guid id))
+            throw new RpcException(new Status(StatusCode.InvalidArgument, "Invalid Id format"));
+
+        var todo = await _dbContext.ToDoItems.FindAsync(id);
 
         if (todo == null)
             throw new RpcException(new Status(StatusCode.NotFound, "Todo not found"));
