@@ -22,3 +22,6 @@ _ReSharper.*/
 # Rider
 .idea/
 
+*/todo.db-shm
+*/todo.db-wal
+*.db
