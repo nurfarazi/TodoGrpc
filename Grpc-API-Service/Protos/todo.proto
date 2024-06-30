@@ -31,6 +31,7 @@ message ReadRequest
 message ReadResponse
 {
   string title = 1;
+  string id = 2;
 }
 
 message UpdateRequest
